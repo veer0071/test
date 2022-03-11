@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ record.heading }}</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script>
+        $.ajax({
+            url: "{{record.api_url}}",
+            success: function (data) {
+                $('#data').text(JSON.stringify(data));
+            },
+            error: function () {
+                alert("There was an error.");
+            }
+        });
+    </script>
+</head>
+<body>
+<a href="/"> Go To Home Page</a><br/>
+<code>
+    <h1>Data render from API in backend service and content display as html</h1>
+    {{ record.content }}
+</code>
+<div class="api_data">
+    <h1>Data fetched from API on browser load</h1>
+    <div id="data"></div>
+</div>
+</body>
+</html>
