@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_Veer():  # hello_world page
+def hello_synaos():  # hello_world page
     WELCOME_VAR = os.getenv('WELCOME_VAR', 'USER')
     return render_template('index.html', record={'heading': 'Welcome', 'content': f'Hello {WELCOME_VAR}'})
 
